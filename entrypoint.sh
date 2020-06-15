@@ -7,3 +7,4 @@ gcloud auth activate-service-account --key-file="$HOME"/service_key.json --proje
 
 gsutil cp -z "css,js,html,svg" -r -a "$INPUT_BUILD_FOLDER" gs://"$INPUT_BUCKET_NAME"
 gsutil web set -m "$INPUT_HOME_PAGE_PATH" -e "$INPUT_ERROR_PAGE_PATH" gs://"$INPUT_BUCKET_NAME"
+gsutil setmeta -h "Cache-Control:public, max-age=20" gs://"$INPUT_BUCKET_NAME"/*.html
