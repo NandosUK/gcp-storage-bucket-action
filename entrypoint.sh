@@ -15,4 +15,4 @@ gsutil -m setmeta -h "Cache-Control:public, max-age=31536000" gs://"$INPUT_BUCKE
 gsutil -m setmeta -h "Cache-Control:public, max-age=31536000" gs://"$INPUT_BUCKET_NAME"/**/*.woff2
 gsutil -m setmeta -h "Cache-Control:public, max-age=31536000" gs://"$INPUT_BUCKET_NAME"/static/**/*
 gsutil -m setmeta -h "Cache-Control:public, max-age=20" gs://"$INPUT_BUCKET_NAME"/**/*.json
-gsutil -m setmeta -h "Cache-Control:public, max-age=20" gs://"$INPUT_BUCKET_NAME"/**/*.html
+gsutil -m setmeta -h "Cache-Control:public, max-age=20, X-Content-Type-Options: nosniff, X-Frame-Options: SAMEORIGIN" gs://"$INPUT_BUCKET_NAME"/**/*.html
